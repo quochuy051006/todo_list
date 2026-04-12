@@ -16,22 +16,35 @@
     <div id="web-container">
         <h1>My Modern Todo</h1>
 
-        <!-- ul is a 'list container'. li is an 'item' inside that list. -->
-        <ul id="todo-list">
-            <li>
-                <!-- A checkbox for ticking off a task. -->
-                <input type="checkbox"> 
-                Buy milk
-            </li>
-            <li>
-                <input type="checkbox"> 
-                Learn SDD
-            </li>
-            <li>
-                <input type="checkbox"> 
-                Practice HTML
-            </li>
-        </ul>
+        <!-- View Mode: Used for viewing the list and the 'Add' button. -->
+        <div id="view-mode">
+            <button id="add-task-btn">Add New Task</button>
+        </div>
+
+        <!-- Input Mode: A hidden section that appears when adding a new task. -->
+        <div id="input-mode" class="hidden">
+            <input type="text" id="todo-input" placeholder="What needs to be done?">
+            <button id="submit-btn">Submit</button>
+            <button id="cancel-btn">Cancel</button>
+        </div>
+
+        <!-- The list container is now empty and ready for dynamic content. -->
+        <ul id="todo-list"></ul>
     </div>
+
+    <!-- Modal for Delete Confirmation -->
+    <div id="delete-modal" class="modal hidden">
+        <div class="modal-content">
+            <h3>Confirm Deletion</h3>
+            <p>Are you sure you want to delete this task? This action cannot be undone.</p>
+            <div class="modal-actions">
+                <button id="modal-confirm-btn">Yes, Delete</button>
+                <button id="modal-cancel-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Linking our external JavaScript file (Logic layer) -->
+    <script src="script.js"></script>
 </body>
 </html>
