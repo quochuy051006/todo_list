@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Viewport ensures the app scales correctly on different screen sizes by setting the width to match the device -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Todo - Baseline</title>
+    <!-- Linking our external CSS file (Separation of Concerns: Structure vs. Presentation) -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 
+        The 'app' div is our main wrapper or "Card". 
+        Rationale: Grouping the application inside a targeted ID makes it easy to style and mount JavaScript later.
+    -->
+    <div id="app">
+        <h1>My Modern Todo</h1>
+
+        <!-- ul is a 'list container'. li is an 'item' inside that list. -->
+        <ul id="todo-list">
+            <li>
+                <!-- A checkbox for ticking off a task. -->
+                <input type="checkbox"> 
+                Buy milk
+            </li>
+            <li>
+                <input type="checkbox"> 
+                Learn SDD
+            </li>
+            <li>
+                <input type="checkbox"> 
+                Practice HTML
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
