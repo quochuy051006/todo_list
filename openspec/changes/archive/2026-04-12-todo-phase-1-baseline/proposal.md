@@ -1,7 +1,7 @@
 # Proposal: Todo Phase 1 - The Baseline
 
 ## Background
-The user wants to practice the Software Development Design (SDD) lifecycle by building a vanilla HTML/JS/CSS todo list. This first phase focuses on establishing a "Seed" state where default data is displayed to verify the layout and styling.
+The user wants to practice the Software Development Design (SDD) lifecycle by building a vanilla HTML/JS/CSS todo web page. This first phase focuses on establishing a "Seed" state where default data is displayed to verify the layout and styling.
 
 ## Problem
 Currently, there is no code. We need a foundation that displays a default list of tasks so we can ensure the visual design (CSS) is solid before adding complex interactivity (JS).

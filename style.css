@@ -14,14 +14,18 @@ body {
     padding-top: 100px;
 }
 
-/* The white box for our application */
-#app {
+/* 
+   The main container for our web page content.
+   Note: max-width is removed to allow the content to fill the screen.
+*/
+#web-container {
     background: #ffffff;
-    max-width: 400px;
-    width: 100%;
-    padding: 30px;
+    width: 90%;             /* Use most of the screen width */
+    max-width: 1200px;      /* But keep a reasonable upper limit for very wide monitors */
+    margin: 0 auto;         /* Centers the wide box */
+    padding: 40px;
     border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1); /* Adds a shadow below the box */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1); 
 }
 
 h1 {

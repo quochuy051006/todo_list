@@ -1,21 +1,21 @@
 # Design: Todo Phase 1 - The Baseline
 
 ## Architecture
-A single-page application using pure HTML and CSS.
+A single-page web environment using pure HTML and CSS.
 
 ## UI Structure
-The main container should be centered in the viewport with a max-width of 400px.
+The main content should be horizontally centered and take up the majority of the available browser width (up to 1200px) for a "Full-Width" dashboard feel.
 
 ### Component Map
-1. **Header**: "My Modern Todo"
+1. **Title**: "My Modern Todo"
 2. **Task List**:
    - `<ul>` element.
    - 3 `<li>` elements containing text "Buy milk", "Learn SDD", and "Practice HTML".
 
 ## Styling Guidelines
-- **Container**: Padding: 20px, Shadow: Light gray, Border-radius: 10px.
+- **Container**: Padding: 40px, Shadow: Light gray, Border-radius: 12px, Width: 90%.
 - **Typography**: Sans-serif, Clean, Vertical spacing between items: 10px.
-- **Layout**: Simple vertical stack for the header and list.
+- **Layout**: Simple vertical stack for the title and list.
 
 ## Data Structure (Future-proofing)
 Although static, we will design for a future `Todo` object:
