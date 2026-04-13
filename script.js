@@ -1,5 +1,5 @@
 /**
- * script.js - Todo Phase 2: The Mutator
+ * script.js - Todo Phase 3: The Status
  * Internal state is managed via an array of objects.
  * UI is updated by re-rendering the task list based on that state.
  */
@@ -31,6 +31,18 @@ function toggleState(mode) {
 }
 
 /**
+ * Toggles the completion state of a todo.
+ * @param {number} id - The ID of the todo to toggle.
+ */
+function toggleTodo(id) {
+    const todo = todos.find(t => t.id === id);
+    if (todo) {
+        todo.completed = !todo.completed;
+        render(); // Re-render to show updated status
+    }
+}
+
+/**
  * Re-renders the todo list to match the current state.
  */
 function render() {
@@ -41,10 +53,15 @@ function render() {
         const li = document.createElement('li');
         // We use data-id to help identify which todo we are interacting with
         li.setAttribute('data-id', todo.id);
+        
+        // Apply the .completed class if necessary
+        if (todo.completed) {
+            li.classList.add('completed');
+        }
 
         li.innerHTML = `
             <div class="task-content">
-                <input type="checkbox" ${todo.completed ? 'checked' : ''}>
+                <input type="checkbox" ${todo.completed ? 'checked' : ''} class="status-checkbox">
                 <span>${todo.text}</span>
             </div>
             <div class="task-actions">
@@ -172,7 +189,7 @@ document.getElementById('modal-confirm-btn').addEventListener('click', () => {
 
 document.getElementById('modal-cancel-btn').addEventListener('click', closeDeleteModal);
 
-// 5. Event Delegation on the <ul> for dynamic buttons
+// 5. Event Delegation on the <ul> for dynamic elements
 document.getElementById('todo-list').addEventListener('click', (event) => {
     const target = event.target;
     // Walk up the tree to find the parent <li> which holds the ID
@@ -190,6 +207,8 @@ document.getElementById('todo-list').addEventListener('click', (event) => {
     } else if (target.classList.contains('cancel-edit-btn')) {
         editingId = null; // Clear lock
         render(); // Just re-render to discard changes
+    } else if (target.classList.contains('status-checkbox')) {
+        toggleTodo(id);
     }
 });
 
